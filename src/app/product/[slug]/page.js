@@ -12,7 +12,7 @@ export default function ProductPage() {
 
   const [product, setProduct] = useState(null);
   const router = useRouter();
-  const { addToCart } = useCart();
+  const { cart, addToCart } = useCart();
 
   const handleAddToCart = () => {
     addToCart(product, 1); // Pass the product object to add it to the cart
@@ -73,14 +73,14 @@ export default function ProductPage() {
               {product.name || "The Catcher in the Rye"}
             </h1>
             <div className="flex mb-4">
-              <span class="flex items-center">
+              <span className="flex items-center">
                 <svg
                   fill="currentColor"
                   stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-indigo-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -91,7 +91,7 @@ export default function ProductPage() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-indigo-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -102,7 +102,7 @@ export default function ProductPage() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-indigo-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -113,7 +113,7 @@ export default function ProductPage() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-indigo-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -124,41 +124,41 @@ export default function ProductPage() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  class="w-4 h-4 text-indigo-500"
+                  className="w-4 h-4 text-indigo-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                 </svg>
-                <span class="text-gray-600 ml-3">4 Reviews</span>
+                <span className="text-gray-600 ml-3">4 Reviews</span>
               </span>
             </div>
             <p className="leading-relaxed">
               {product.description || "Product description goes here"}
             </p>
-            <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-              <div class="flex">
-                <span class="mr-3">Color</span>
-                <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
+              <div className="flex">
+                <span className="mr-3">Color</span>
+                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
               </div>
-              <div class="flex ml-6 items-center">
-                <span class="mr-3">Size</span>
-                <div class="relative">
-                  <select class="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
+              <div className="flex ml-6 items-center">
+                <span className="mr-3">Size</span>
+                <div className="relative">
+                  <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
                     <option>SM</option>
                     <option>M</option>
                     <option>L</option>
                     <option>XL</option>
                   </select>
-                  <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                  <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
                     <svg
                       fill="none"
                       stroke="currentColor"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="w-4 h-4"
+                      className="w-4 h-4"
                       viewBox="0 0 24 24"
                     >
                       <path d="M6 9l6 6 6-6"></path>
@@ -179,10 +179,17 @@ export default function ProductPage() {
                   <img className="w-5" src="/icons/cart.png"></img>
                 </button>
                 <button
-                  className="flex ml-2 w-30 text-white bg-indigo-500 border-0 py-2 px-3 focus:outline-none hover:bg-indigo-600 rounded"
+                  className={`flex ml-2 w-30 text-white border-0 py-2 px-3 rounded focus:outline-none ${
+                    cart.length === 0
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-indigo-500 hover:bg-indigo-600"
+                  }`}
                   onClick={() => {
-                    router.push("/checkout");
+                    if (cart.length > 0) {
+                      router.push("/checkout");
+                    }
                   }}
+                  disabled={cart.length === 0}
                 >
                   Checkout
                 </button>
